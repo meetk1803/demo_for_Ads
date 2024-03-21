@@ -10,6 +10,7 @@ import static com.example.demo_for_ads.gfc_adshelper.Ads_Helper.printAdsLog;
 
 import android.app.Activity;
 import android.content.Context;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.Lifecycle;
@@ -61,7 +62,6 @@ public class SplashFullAdUtils {
                             public void onAdDismissedFullScreenContent() {
                                 // Called when fullscreen content is dismissed.
                                 printAdsLog("Splash>> callback_", "The ad was dismissed.");
-
                                 AppOpenManager.isAnyOtherFullAdShowing = false;
 
                                 if (myAdListner != null)

@@ -16,14 +16,13 @@
         android:text="start"
         />
 
-
-
     <Button
         android:id="@+id/stop"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/_30sdp"
         android:text="stop"
         />
+
     <FrameLayout
         android:layout_alignParentBottom="true"
         android:id="@+id/mFlBanner"

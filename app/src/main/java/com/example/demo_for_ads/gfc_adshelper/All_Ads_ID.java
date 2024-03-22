@@ -32,7 +32,6 @@ public class All_Ads_ID {
     public static String Admob_SmallNative = "ca-app-pub-3940256099942544/2247696110";
     public static String Admob_BgNative = "ca-app-pub-3940256099942544/2247696110";
 
-
     public static String FB_banner = "IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID";
     public static String FB_smallNative = "IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID";
     public static String FB_BgNative = "IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID";

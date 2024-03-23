@@ -47,7 +47,7 @@ public class splash_screen extends AppCompatActivity {
                 public void run() {
                     goToNext();
                 }
-            }, 2000);
+            }, 3000);
         }
 
 

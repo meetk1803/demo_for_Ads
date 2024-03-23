@@ -28,7 +28,7 @@ import com.example.demo_for_ads.gfc_adshelper.ad.open.AppOpenManager;
 
 public class MainActivity2 extends AppCompatActivity {
 
-    int a = 0;
+   int a = 0;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class MainActivity2 extends AppCompatActivity {
 
        Button fragment = findViewById(R.id.fragment);
        Button fragment1 = findViewById(R.id.fragment1);
+       Button fragment2 = findViewById(R.id.fragment2);
 
         fragment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,13 +45,19 @@ public class MainActivity2 extends AppCompatActivity {
                 openactivity("blankFragment");
             }
         });
+        fragment2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Intent i = new Intent(MainActivity2 .this,MainActivity3.class);
+               startActivity(i);
+            }
+        });
         fragment1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openactivity("blankFragment1");}
         });
-
-        //Banner
+        // Banner
         FrameLayout mFlBanner = findViewById(R.id.mFlBanner);
         if (!isEmptyStr(All_Ads_ID.Network_Banner)) {
             if (All_Ads_ID.Network_Banner.equalsIgnoreCase("a")) {
@@ -68,9 +75,8 @@ public class MainActivity2 extends AppCompatActivity {
             mFlBanner.setVisibility(View.GONE);
         }
     }
-
     private void openactivity(String label)  {
-        a = 0;
+    //    a = 0;
         if (!isEmptyStr(All_Ads_ID.Network_Full)) {
         if (All_Ads_ID.Network_Full.equalsIgnoreCase("a")) {
             if (!isEmptyStr(All_Ads_ID.Admob_Full_Middle) && !isEmptyStr(All_Ads_ID.FB_Full) && !isEmptyStr(All_Ads_ID.Custom_FullAds)) {
@@ -119,7 +125,6 @@ public class MainActivity2 extends AppCompatActivity {
                             Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
                             intent.putExtra("label", label);
                             startActivity(intent);
-
                         }
                         break;
                     default:
@@ -130,7 +135,6 @@ public class MainActivity2 extends AppCompatActivity {
                                 Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
                                 intent.putExtra("label", label);
                                 startActivity(intent);
-
                             }
 
                             @Override
@@ -138,7 +142,6 @@ public class MainActivity2 extends AppCompatActivity {
                                 Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
                                 intent.putExtra("label", label);
                                 startActivity(intent);
-
                             }
                             @Override
                             public void onAdFailedToLoad() {
@@ -152,13 +155,11 @@ public class MainActivity2 extends AppCompatActivity {
                                     Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
                                     intent.putExtra("label", label);
                                     startActivity(intent);
-
                                 }
                             }
                         });
                         break;
                 }
-
                 if (adsValue == 2) {
                     adsValue = 0;
                 } else {
@@ -213,7 +214,6 @@ public class MainActivity2 extends AppCompatActivity {
                             intent.putExtra("label", label);
                             startActivity(intent);
                         }
-
                         @Override
                         public void onAdFailedToLoad() {
                             if (All_Ads_ID.isbacklinkFail == true) {
@@ -261,7 +261,7 @@ public class MainActivity2 extends AppCompatActivity {
                             }
                         }
                     });
-                    All_Ads_ID.full_ads = false;
+
                 } else {
                     if (All_Ads_ID.isLinkAds == true) {
                         All_Ads_ID.isFromLinkAdClick = true;
@@ -288,14 +288,12 @@ public class MainActivity2 extends AppCompatActivity {
                             intent.putExtra("label", label);
                             startActivity(intent);
                         }
-
                         @Override
                         public void onNoNeedToShow() {
                             Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
                             intent.putExtra("label", label);
                             startActivity(intent);
                         }
-
                         @Override
                         public void onAdFailedToLoad() {
                             if (All_Ads_ID.isbacklinkFail == true) {
@@ -316,7 +314,6 @@ public class MainActivity2 extends AppCompatActivity {
                     if (All_Ads_ID.isLinkAds == true) {
                         All_Ads_ID.isFromLinkAdClick = true;
                         //AdsID.isFromAdpAdClick = true;
-
                         CustomTabsIntent.Builder customIntent = new CustomTabsIntent.Builder();
                         customIntent.setToolbarColor(ContextCompat.getColor(MainActivity2.this, R.color.colorPrimary));
                         Ads_Helper.openCustomTab(MainActivity2.this, customIntent.build(), Uri.parse(All_Ads_ID.mLinkads));
@@ -414,14 +411,13 @@ public class MainActivity2 extends AppCompatActivity {
         startActivity(intent);
     }
 }
-
     @Override
     protected void onRestart() {
         super.onRestart();
         if (All_Ads_ID.isFromLinkAdClick) {
             All_Ads_ID.isFromLinkAdClick = false;
             AppOpenManager.isFromApp = true;
-            gonext();
+        //    gonext();
         }
     }
 

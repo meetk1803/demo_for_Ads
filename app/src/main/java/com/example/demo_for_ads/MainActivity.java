@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
     private void openactivity() {
         a = 1;
 
@@ -74,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
                                     gonext();
 
                                 }
-
                                 @Override
                                 public void onNoNeedToShow() {
                                     gonext();
@@ -341,7 +339,6 @@ public class MainActivity extends AppCompatActivity {
                 if (All_Ads_ID.isLinkAds) {
                     All_Ads_ID.isFromLinkAdClick = true;
                     //AdsID.isFromAdpAdClick = true;
-
                     CustomTabsIntent.Builder customIntent = new CustomTabsIntent.Builder();
                     customIntent.setToolbarColor(ContextCompat.getColor(MainActivity.this, R.color.colorPrimary));
                     Ads_Helper.openCustomTab(MainActivity.this, customIntent.build(), Uri.parse(All_Ads_ID.mLinkads));
@@ -367,6 +364,7 @@ public class MainActivity extends AppCompatActivity {
             All_Ads_ID.isFromLinkAdClick = false;
             AppOpenManager.isFromApp = true;
             gonext();
+
         }
     }
 
@@ -379,7 +377,6 @@ public class MainActivity extends AppCompatActivity {
             a = 0;
             startActivity(new Intent(MainActivity.this, MainActivity2.class));
         }
-
-
+        
     }
 }
